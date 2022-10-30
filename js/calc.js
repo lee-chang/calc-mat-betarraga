@@ -88,7 +88,7 @@ function calcDatos(F) {
     }
 
     //dibujar texto dentro del cuadrado
-    ctx.clearRect(0, 0, 100000, 100000000);
+    ctx.clearRect(0, 0, 100000000, 100000000);
     ctx.fillStyle = 'rgb(0, 0, 0)';
     ctx.font = '45px sans-serif';
     ctx.fillText(A + " kg/h",550, 88);
