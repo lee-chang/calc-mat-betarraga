@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="flowchart" style="border: 1px solid black;"></canvas>
+
+    <script>
+
+        var ctx = document.getElementById('flowchart').getContext('2d');
+        
+
+        import { createCanvas } from 'https://cdn.skypack.dev/vb-canvas@0.1.4';
+
+        const { ctx } = createCanvas({
+        target: document.body,
+        viewBox: [0, 0, 100, 100],
+        // change to fill to fill canvas (xMidYMid slice style!)
+        scaleMode: 'fit'
+        });
+
+
+
+        //insertar imagen al canvas 
+        var img = new Image();
+        img.src = 'img/flowchart.png';
+        img.onload = function(){
+            ctx.drawImage(img, 0, 0);
+        }
+
+        //dibujar texto dentro del cuadrado
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.font = '45px sans-serif';
+        ctx.fillText('A',550, 88);
+        ctx.fillText('B',950, 88);
+        ctx.fillText('C',1180, 321);
+        ctx.fillText('D',620, 657);
+        ctx.fillText('E',1470, 696);
+        ctx.fillText('F',1325, 958);
+        ctx.fillText('G',325, 807);
+        ctx.fillText('H',325, 396);
+        ctx.fillText('I',530, 958);
+
+        
+
+
+    </script>
+</body>
+</html>

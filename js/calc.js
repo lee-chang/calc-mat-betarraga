@@ -1,6 +1,16 @@
 var barchart = document.getElementById("bar-chart").getContext("2d");
 var pastelchart = document.getElementById("pastel-chart").getContext("2d");
 
+//canvas Flowchart
+var ctx = document.getElementById("flowchart").getContext("2d");
+ctx.canvas.width = innerWidth+500;
+ctx.canvas.height = innerHeight+400;
+var img = new Image();
+img.src = '../img/flowchart.png';
+img.onload = function(){
+    ctx.drawImage(img, 0, 0);
+}
+
 var buttonF = document.getElementById("button")
 buttonF.addEventListener('click', function(){
     var F = parseFloat(document.getElementById("input").value);
@@ -27,13 +37,22 @@ function calcDatos(F) {
 
 
     document.getElementById("value-A").innerHTML = A + " kg/h";
+    document.getElementById("td-A").innerHTML = A + " kg/h"; 
     document.getElementById("value-B").innerHTML = B+ " kg/h";
+    document.getElementById("td-B").innerHTML = B+ " kg/h";
     document.getElementById("value-C").innerHTML = C+ " kg/h";
+    document.getElementById("td-C").innerHTML = C+ " kg/h";
     document.getElementById("value-D").innerHTML = D+ " kg/h";
+    document.getElementById("td-D").innerHTML = D+ " kg/h";
     document.getElementById("value-E").innerHTML = E+ " kg/h";
+    document.getElementById("td-E").innerHTML = E + " kg/h";
+    document.getElementById("td-F").innerHTML = F + " kg/h";
     document.getElementById("value-G").innerHTML = G+ " kg/h";
+    document.getElementById("td-G").innerHTML = G+ " kg/h";
     document.getElementById("value-H").innerHTML = H+ " kg/h";
+    document.getElementById("td-H").innerHTML = H+ " kg/h";
     document.getElementById("value-I").innerHTML = I+ " kg/h";
+    document.getElementById("td-I").innerHTML = I+ " kg/h";
     document.getElementById("value-Qs").innerHTML = Qs + " kg/h";
     document.getElementById("value-Mac").innerHTML = Mac + " kg/h";
     document.getElementById("value-FlujoAire").innerHTML = FlujoAire + " kg/h";
@@ -48,11 +67,10 @@ function calcDatos(F) {
     dataVapor.push(Wde);
     dataVapor.push(Wt);
     updateBarChart(dataVapor);
-   
-    //Variables for pastel chart
-//sum of A + B
-    totalPie = parseFloat(A) + parseFloat(B);
 
+    //Variables for pastel chart
+    //sum of A + B
+    totalPie = parseFloat(A) + parseFloat(B);
     pA = ((parseFloat(A)/totalPie)*100);
     pC = ((parseFloat(C)/totalPie)*100);
 
@@ -60,8 +78,28 @@ function calcDatos(F) {
     dataPie.push(pA);
     dataPie.push(pC);
 
-    console.log(totalPie);
     updatePastelChart(dataPie);
+
+    //updateFlowChart(a,b,c,d,e,f,g,h,i);
+    var img = new Image();
+    img.src = '../img/flowchart.png';
+    img.onload = function(){
+        ctx.drawImage(img, 0, 0);
+    }
+
+    //dibujar texto dentro del cuadrado
+    ctx.clearRect(0, 0, 100000, 100000000);
+    ctx.fillStyle = 'rgb(0, 0, 0)';
+    ctx.font = '45px sans-serif';
+    ctx.fillText(A + " kg/h",550, 88);
+    ctx.fillText(B + " kg/h",950, 88);
+    ctx.fillText(C + " kg/h",1180, 321);
+    ctx.fillText(D + " kg/h",620, 657);
+    ctx.fillText(E + " kg/h",1470, 696);
+    ctx.fillText(F + " kg/h",1325, 958);
+    ctx.fillText(G + " kg/h",325, 807);
+    ctx.fillText(H + " kg/h",325, 396);
+    ctx.fillText(I + " kg/h",530, 958);
 }
 
 
