@@ -6,7 +6,7 @@ var ctx = document.getElementById("flowchart").getContext("2d");
 ctx.canvas.width = innerWidth+500;
 ctx.canvas.height = innerHeight+400;
 var img = new Image();
-img.src = '../img/flowchart.png';
+img.src = 'https://raw.githubusercontent.com/vchangcar/calc-mat-betarraga/main/img/flowchart.png';
 img.onload = function(){
     ctx.drawImage(img, 0, 0);
 }
@@ -82,7 +82,7 @@ function calcDatos(F) {
 
     //updateFlowChart(a,b,c,d,e,f,g,h,i);
     var img = new Image();
-    img.src = '../img/flowchart.png';
+    img.src = 'https://raw.githubusercontent.com/vchangcar/calc-mat-betarraga/main/img/flowchart.png';
     img.onload = function(){
         ctx.drawImage(img, 0, 0);
     }
