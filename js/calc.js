@@ -61,7 +61,7 @@ function calcDatos(F) {
     document.getElementById("td-I").innerHTML = I+ " kg/h";
     document.getElementById("value-Qs").innerHTML = Qs + " MJ/h";
     document.getElementById("value-Mac").innerHTML = Mac + " kg/h";
-    document.getElementById("value-FlujoAire").innerHTML = FlujoAire + 'm3<sup>5</sup>/h';
+    document.getElementById("value-FlujoAire").innerHTML = FlujoAire + 'm<sup>3</sup>/h';
     document.getElementById("value-Wex").innerHTML = Wex + " kg/h";
     document.getElementById("value-Wde").innerHTML = Wde + " kg/h";
     document.getElementById("value-Wt").innerHTML = Wt + " kg/h";
