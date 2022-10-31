@@ -16,10 +16,6 @@ function dibujarEnElCanvas (ctx){
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     }
 }
-setTimeout(function() {
-    inicializarCanvas();
-    addEventListener("resize", inicializarCanvas);
-    }, 15);
 
 var buttonF = document.getElementById("button")
 buttonF.addEventListener('click', function(){
