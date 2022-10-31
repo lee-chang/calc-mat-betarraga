@@ -274,3 +274,10 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/* canvas .flowchart{
+    border: solid 2px purple;
+    background-color: green;
+    width: 100%;
+    height: 80vh;
+} */

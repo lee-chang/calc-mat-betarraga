@@ -2,14 +2,24 @@ var barchart = document.getElementById("bar-chart").getContext("2d");
 var pastelchart = document.getElementById("pastel-chart").getContext("2d");
 
 //canvas Flowchart
-var ctx = document.getElementById("flowchart").getContext("2d");
-ctx.canvas.width = innerWidth+500;
-ctx.canvas.height = innerHeight+400;
-var img = new Image();
-img.src = 'https://raw.githubusercontent.com/vchangcar/calc-mat-betarraga/main/img/flowchart.png';
-img.onload = function(){
-    ctx.drawImage(img, 0, 0);
+
+var canvas= document.getElementById("flowchart")
+canvas.width = 500;
+canvas.height = 400;
+var ctx = canvas.getContext("2d");
+dibujarEnElCanvas(ctx);
+
+function dibujarEnElCanvas (ctx){
+    var img = new Image();
+    img.src = 'img/flowchart.png';
+    img.onload = function(){
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    }
 }
+setTimeout(function() {
+    inicializarCanvas();
+    addEventListener("resize", inicializarCanvas);
+    }, 15);
 
 var buttonF = document.getElementById("button")
 buttonF.addEventListener('click', function(){
@@ -82,24 +92,24 @@ function calcDatos(F) {
 
     //updateFlowChart(a,b,c,d,e,f,g,h,i);
     var img = new Image();
-    img.src = 'https://raw.githubusercontent.com/vchangcar/calc-mat-betarraga/main/img/flowchart.png';
+    img.src = 'img/flowchart.png';
     img.onload = function(){
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(img, 0, 0,canvas.width, canvas.height);
     }
 
     //dibujar texto dentro del cuadrado
     ctx.clearRect(0, 0, 100000000, 100000000);
     ctx.fillStyle = 'rgb(0, 0, 0)';
-    ctx.font = '45px sans-serif';
-    ctx.fillText(A + " kg/h",550, 88);
-    ctx.fillText(B + " kg/h",950, 88);
-    ctx.fillText(C + " kg/h",1180, 321);
-    ctx.fillText(D + " kg/h",620, 657);
-    ctx.fillText(E + " kg/h",1470, 696);
-    ctx.fillText(F + " kg/h",1325, 958);
-    ctx.fillText(G + " kg/h",325, 807);
-    ctx.fillText(H + " kg/h",325, 396);
-    ctx.fillText(I + " kg/h",530, 958);
+    ctx.font = '12px sans-serif';
+    ctx.fillText(A + " kg/h",160, 28);
+    ctx.fillText(B + " kg/h",280, 28);
+    ctx.fillText(C + " kg/h",350, 107);
+    ctx.fillText(D + " kg/h",185, 219);
+    ctx.fillText(E + " kg/h",410, 275);
+    ctx.fillText(F + " kg/h",396, 320);
+    ctx.fillText(G + " kg/h",95, 270);
+    ctx.fillText(H + " kg/h",95, 132);
+    ctx.fillText(I + " kg/h",156, 320);
 }
 
 
